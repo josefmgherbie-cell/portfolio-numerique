@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersécurité - Portfolio Numérique</title>  
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <style>
+        /* Styles spécifiques pour la page Cybersécurité et le Quiz */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .nav-retour {
+            display: inline-block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .presentation-container {
+            text-align: center;
+            background: #eef2f7;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .quiz-box {
+            background: #f9fbfd;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .quiz-question {
+            margin-bottom: 15px;
+        }
+        .btn-calcul {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-calcul:hover {
+            background-color: #004999;
+        }
+        #resultat-score {
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        footer ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="nav-retour">← Retour à l'accueil</a>
+        <h1>🔒 Cybersécurité : Enjeux et Bonnes Pratiques</h1>
+        <p>Comprendre les menaces et adopter les réflexes essentiels pour sécuriser son environnement numérique.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>📊 Infographie / Présentation</h2>
+            <p>Découvrez ci-dessous notre support visuel interactif réalisé pour sensibiliser aux risques numériques majeurs (phishing, mots de passe, sauvegardes).</p>
+            
+           
+            <div class="presentation-container">
+                <p>[Espace réservé pour l'intégration de votre infographie Canva ou présentation Gamma]</p>
+                
+                <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%;">
+                    <iframe src="/media/cyber.pdf" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ></iframe>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section>
+            <h2>🛡️ Quiz interactif : « Suis-je bien protégé ? »</h2>
+            <p>Cochez les bonnes pratiques que vous appliquez au quotidien pour évaluer votre niveau de sécurité informatique :</p>
+            
+            <div class="quiz-box">
+                <form id="securityQuiz">
+                    <div class="quiz-question">
+                        <label><input type="checkbox" name="q" value="1"> J'utilise des mots de passe uniques et complexes pour chaque service, gérés via un coffre-fort (gestionnaire de mots de passe).</label>
+                    </div>
+                    <div class="quiz-question">
+                        <label><input type="checkbox" name="q" value="1"> J'active systématiquement l'authentification multifacteur (MFA / 2FA) partout où c'est possible.</label>
+                    </div>
+                    <div class="quiz-question">
+                        <label><input type="checkbox" name="q" value="1"> Je réalise régulièrement des sauvegardes de mes données importantes sur un support externe ou cloud sécurisé.</label>
+                    </div>
+                    <div class="quiz-question">
+                        <label><input type="checkbox" name="q" value="1"> Je mets à jour régulièrement mon système d'exploitation et mes logiciels pour corriger les failles de sécurité.</label>
+                    </div>
+                    <div class="quiz-question">
+                        <label><input type="checkbox" name="q" value="1"> Je vérifie systématiquement l'adresse e-mail de l'expéditeur avant de cliquer sur un lien ou d'ouvrir une pièce jointe.</label>
+                    </div>
+                    
+                    <button type="button" class="btn-calcul" onclick="calculerScore()">Calculer mon niveau</button>
+                </form>
+                
+                <div id="resultat-score"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 Sources et Références Officielles</h2>
+            <p>Les recommandations présentées sur cette page s'appuient sur les référentiels des autorités reconnues en matière de sécurité numérique :</p>
+            <ul>
+                <li><strong>ANSSI</strong> (Agence Nationale de la Sécurité des Systèmes d'Information) - <a href="https://www.ssi.gouv.fr" target="_blank">ssi.gouv.fr</a> : Guide d'hygiène informatique.</li>
+                <li><strong>Cybermalveillance.gouv.fr</strong> - Dispositif gouvernemental d'assistance aux victimes d'actes de cybermalveillance.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Portfolio Numérique | Conçu dans le cadre du cursus en Technologie de l'Informatique.</p>
+    </footer>
+
+    <!-- Script JavaScript pour le calcul du score -->
+    <script>
+        function calculerScore() {
+            const checkboxes = document.querySelectorAll('input[name="q"]:checked');
+            const score = checkboxes.length;
+            const total = 5;
+            let message = "";
+            let couleur = "";
+
+            if (score === 5) {
+                message = "Excellent ! Votre niveau de protection est optimal.";
+                couleur = "green";
+            } else if (score >= 3) {
+                message = "Bon niveau, mais quelques efforts restent à faire pour combler vos failles.";
+                couleur = "orange";
+            } else {
+                message = "Attention ! Votre niveau de sécurité est insuffisant. Appliquez les recommandations de l'ANSSI d'urgence.";
+                couleur = "red";
+            }
+
+            const resultatDiv = document.getElementById("resultat-score");
+            resultatDiv.innerHTML = `Votre score : ${score} / ${total}. <br><span style="color: ${couleur};">${message}</span>`;
+        }
+    </script>
+
+</body>
+</html>
