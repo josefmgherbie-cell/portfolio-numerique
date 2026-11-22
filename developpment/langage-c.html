@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/portfolio-numerique/css/style.css" />
+    <title>Programmation en Langage C</title>
+    <style>
+      h1 {
+        color: white;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f7f6;
+      }
+      header,
+      section,
+      footer {
+        max-width: 900px;
+        margin: 0 auto 25px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .nav-retour {
+        display: inline-block;
+        margin-bottom: 15px;
+        text-decoration: none;
+        color: #0066cc;
+        font-weight: 600;
+      }
+      h1 {
+        color: #1a252f;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: #0066cc;
+        border-bottom: 2px solid #eef2f7;
+        padding-bottom: 8px;
+        margin-top: 0;
+      }
+      h3 {
+        color: #34495e;
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+        margin-right: 15px;
+        font-weight: bold;
+      }
+      section {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #00599c;
+        border-bottom: 2px solid #00599c;
+        padding-bottom: 5px;
+      }
+      pre {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Consolas", monospace;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #00599c;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .tools {
+        font-size: 0.9em;
+        color: #555;
+        background: #eef4fa;
+        padding: 10px;
+        border-left: 4px solid #00599c;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="nav-retour">← Retour à l'accueil</a>
+      <h1>langage C</h1>
+      <p>
+        <strong>Objectif :</strong>Trois programmes illustrant variables,
+        boucles, tableaux,fonctions et pointeurs, plus un comparatif Python / C.
+      </p>
+    </header>
+
+    <div class="tools">
+      <strong>Outils utilisés :</strong> VS Code, Compilateur GCC (<code
+        >gcc -Wall programme.c -o programme</code
+      >), Assistant IA pour décrypter les avertissements du compilateur.
+    </div>
+
+    <!-- PROGRAMME 1 -->
+    <section>
+      <h2>Programme 1 : Variables, Conditions et Boucles (Factorielle)</h2>
+      <p>
+        <strong>Notions illustrées :</strong> Déclaration de types stricts
+        (<code>int</code>, <code>unsigned long long</code>), entrées/sorties
+        formatées (<code>scanf</code>, <code>printf</code>), structure
+        conditionnelle <code>if/else</code> et boucle <code>for</code>.
+      </p>
+      <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int n, i;
+    unsigned long long fact = 1;
+
+    printf("Entrez un entier positif : ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Erreur : la factorielle d'un nombre negatif n'existe pas.\n");
+    } else {
+        for (i = 1; i <= n; ++i) {
+            fact *= i;
+        }
+        printf("Factorielle de %d = %llu\n", n, fact);
+    }
+    return 0;
+}</code></pre>
+    </section>
+
+    <!-- PROGRAMME 2 -->
+    <section>
+      <h2>Programme 2 : Tableaux et Fonctions (Moyenne d'un tableau)</h2>
+      <p>
+        <strong>Notions illustrées :</strong> Passage d'un tableau en paramètre
+        d'une fonction, parcours par indexation et séparation de la logique
+        métier de la fonction principale <code>main()</code>.
+      </p>
+      <pre><code>#include &lt;stdio.h&gt;
+
+float calculerMoyenne(float tab[], int taille) {
+    float somme = 0.0;
+    for (int i = 0; i < taille; i++) {
+        somme += tab[i];
+    }
+    return somme / taille;
+}
+
+int main() {
+    float notes[4] = {14.5, 12.0, 16.5, 11.0};
+    float moy = calculerMoyenne(notes, 4);
+    
+    printf("La moyenne des 4 notes est : %.2f\n", moy);
+    return 0;
+}</code></pre>
+    </section>
+
+    <!-- PROGRAMME 3 -->
+    <section>
+      <h2>
+        Programme 3 : Pointeurs et Passage par Adresse (Échange de valeurs)
+      </h2>
+      <p>
+        <strong>Notions illustrées :</strong> Manipulation directe des adresses
+        mémoire avec l'opérateur <code>&</code> et déréférencement avec
+        <code>*</code> pour modifier des variables en dehors de la portée locale
+        de la fonction.
+      </p>
+      <pre><code>#include &lt;stdio.h&gt;
+
+void echanger(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 10, y = 25;
+    printf("Avant echange : x = %d, y = %d\n", x, y);
+    
+    echanger(&x, &y); // Envoi des adresses memoire
+    
+    printf("Apres echange : x = %d, y = %d\n", x, y);
+    return 0;
+}</code></pre>
+    </section>
+
+    <!-- TABLEAU COMPARATIF -->
+    <section>
+      <h2>Tableau Comparatif : Python vs Langage C</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Critère</th>
+            <th>Python</th>
+            <th>Langage C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Syntaxe</strong></td>
+            <td>
+              Épurée et lisible, proche de l'anglais. Les blocs de code sont
+              délimités par l'indentation (espaces) sans point-virgule.
+            </td>
+            <td>
+              Plus stricte et verbeuse. Nécessite des accolades
+              <code>{ }</code> pour les blocs et un point-virgule
+              <code>;</code> à la fin de chaque instruction.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Typage</strong></td>
+            <td>
+              Dynamique et implicite : on n'a pas besoin de déclarer le type
+              d'une variable, il peut même changer en cours d'exécution.
+            </td>
+            <td>
+              Statique et explicite : chaque variable doit avoir un type fixe
+              déclaré à l'avance (<code>int</code>, <code>float</code>,
+              <code>char</code>).
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Gestion de la mémoire</strong></td>
+            <td>
+              Automatique grâce au <em>Garbage Collector</em> (ramasse-miettes)
+              qui libère la mémoire inutilisée tout seul.
+            </td>
+            <td>
+              Manuelle : le programmeur gère les adresses (pointeurs) et doit
+              allouer/libérer la mémoire lui-même (<code>malloc</code> /
+              <code>free</code>).
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Rapidité</strong></td>
+            <td>
+              Plus lent, car le code est interprété ligne par ligne au moment de
+              l'exécution.
+            </td>
+            <td>
+              Extrêmement rapide : le code est compilé directement en langage
+              machine compréhensible par le processeur.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Usages principaux</strong></td>
+            <td>
+              Science des données, Intelligence Artificielle, développement web
+              back-end, automatisation et scripts rapides.
+            </td>
+            <td>
+              Systèmes d'exploitation (noyau Linux), systèmes embarqués,
+              microcontrôleurs, pilotes matériels et moteurs de jeux.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>

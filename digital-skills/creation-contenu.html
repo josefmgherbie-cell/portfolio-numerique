@@ -1,13 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=*, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=*, initial-scale=1.0" />
     <title>création de contenu</title>
-</head>
-<body>
-    
-    
-</body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f7f6;
+        color: #2c3e50;
+      }
+      header,
+      section,
+      footer {
+        max-width: 950px;
+        margin: 0 auto 25px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .nav-retour {
+        display: inline-block;
+        margin-bottom: 15px;
+        text-decoration: none;
+        color: #0066cc;
+        font-weight: 600;
+      }
+      h1 {
+        color: #1a252f;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: #0066cc;
+        border-bottom: 2px solid #eef2f7;
+        padding-bottom: 8px;
+        margin-top: 0;
+      }
+      h3 {
+        color: #34495e;
+        margin-top: 25px;
+      }
+
+      .sujet-box {
+        background: #eef2f7;
+        border-left: 4px solid #0066cc;
+        padding: 15px 20px;
+        border-radius: 6px;
+        margin: 15px 0;
+        font-weight: 500;
+      }
+
+      /* Tableau récapitulatif */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.95em;
+      }
+      th,
+      td {
+        border: 1px solid #dce1e7;
+        padding: 12px 15px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #0066cc;
+        color: #ffffff;
+        font-weight: 600;
+      }
+      tr:nth-child(even) {
+        background-color: #f9fbfd;
+      }
+
+      /* Cartes de productions détaillées */
+      .prod-card {
+        background: #f8fafc;
+        border-left: 4px solid #27ae60;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+      }
+      .prod-card h4 {
+        margin-top: 0;
+        color: #1e293b;
+        font-size: 1.1em;
+      }
+      .meta-tag {
+        display: inline-block;
+        background: #e2e8f0;
+        color: #475569;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        margin-right: 5px;
+        font-weight: 600;
+      }
+      .script-box {
+        background: #1e293b;
+        color: #f8fafc;
+        padding: 12px 15px;
+        border-radius: 6px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.88em;
+        margin-top: 10px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="nav-retour">← Retour à l'accueil</a>
+      <h1>🎨 Chapitre 3 – Création de Contenu Numérique Varié</h1>
+      <p>
+        <strong>Objectif :</strong> Produire des contenus numériques variés,
+        interactifs et de haute qualité à partir d'un sujet unique en exploitant
+        des outils spécialisés (IA, montage, présentation).
+      </p>
+
+      <div class="sujet-box">
+        📌 <strong>Sujet unique choisi pour toutes les productions :</strong> «
+        La Cybersécurité et les Bonnes Pratiques de Protection Numérique pour
+        Étudiants »
+      </div>
+    </header>
+    <section>
+      <h2>1. Tableau Récapitulatif des Productions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%">Production</th>
+            <th style="width: 50%">Description</th>
+            <th style="width: 25%">Outils Utilisés</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Avatar parlant</strong></td>
+            <td>
+              Courte vidéo (30 à 60 s) où un avatar présente le sujet à partir
+              d'un script rédigé et relu.
+            </td>
+            <td>HeyGen (ou équivalent)</td>
+          </tr>
+          <tr>
+            <td><strong>Montage vidéo</strong></td>
+            <td>
+              Vidéo dynamique rythmée avec sous-titres, musique de fond libre de
+              droits et transitions sobres.
+            </td>
+            <td>CapCut</td>
+          </tr>
+          <tr>
+            <td><strong>Résumé</strong></td>
+            <td>
+              Résumé structuré et synthétique du sujet, généré automatiquement
+              par l'IA puis corrigé et validé par mes soins.
+            </td>
+            <td>NotebookLM</td>
+          </tr>
+          <tr>
+            <td><strong>Podcast</strong></td>
+            <td>
+              Épisode audio immersif de quelques minutes généré automatiquement
+              à partir de mes sources documentaires.
+            </td>
+            <td>NotebookLM</td>
+          </tr>
+          <tr>
+            <td><strong>Carte mentale</strong></td>
+            <td>
+              Représentation visuelle structurée du sujet (concepts clés,
+              sous-thèmes et liens logiques).
+            </td>
+            <td>NotebookLM, Canva</td>
+          </tr>
+          <tr>
+            <td><strong>PowerPoint interactif avec voix</strong></td>
+            <td>
+              Présentation avec menu cliquable, liens internes de navigation et
+              enregistrement de narration vocale par diapositive.
+            </td>
+            <td>PowerPoint, Canva, Gamma</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECTION 2 : DÉTAIL DES PRODUCTIONS & SCRIPTS -->
+    <section>
+      <h2>2. Détail des Réalisations et Scripts</h2>
+
+      <!-- 1. AVATAR PARLANT -->
+      <div class="prod-card">
+        <h4>1. Avatar Parlant (HeyGen)</h4>
+        <p>
+          <strong>Description :</strong> Introduction visuelle dynamique sous
+          forme de clip de 45 secondes où un avatar numérique présente les
+          enjeux de la cybersécurité aux étudiants.
+        </p>
+        <p>
+          <span class="meta-tag">Outil : HeyGen</span>
+          <span class="meta-tag">Format : Vidéo MP4</span>
+        </p>
+        <strong>exemple de l'avatar :</strong>
+        <div class="script-box">
+          "Bonjour à tous et bienvenue dans ce module de sensibilisation.
+          Saviez-vous qu'une grande majorité des failles de sécurité proviennent
+          d'une simple négligence humaine ? Aujourd'hui, nous allons voir
+          ensemble comment sécuriser vos mots de passe et déjouer les pièges du
+          phishing en quelques minutes seulement. Restez connectés !"
+        </div>
+        <a
+        href="https://app.heygen.com/videos/cybers-curit-l-ia-au-service-des-pirates-7026e798173a4284b54609c6571f7dae"
+        target="_blank"
+        rel="noopener noreferrer"
+        >voir la vidéo</a
+      </div>
+
+      <!-- 2. MONTAGE VIDÉO -->
+      <div class="prod-card">
+        <h4>2. Montage Vidéo (CapCut)</h4>
+        <p>
+          <strong>Description :</strong> Vidéo explicative rythmée intégrant des
+          captures d'écran de bonnes pratiques, des sous-titres automatiques
+          dynamiques, une piste audio lo-fi relaxante et des transitions
+          propres.
+        </p>
+        <p>
+          <span class="meta-tag">Outil : CapCut</span>
+          <span class="meta-tag">Format : Vidéo MP4 1080p</span>
+        </p>
+        <p>
+          <em
+            >[La vidéo éditée sous CapCut est intégrée/liée dans le portfolio
+            pour démonstration pratique].</em
+          >
+        </p>
+      </div>
+
+      <!-- 3. RÉSUMÉ -->
+      <div class="prod-card">
+        <h4>3. Résumé Structuré (NotebookLM)</h4>
+        <p>
+          <strong>Description :</strong> Fiche de synthèse générée à partir des
+          sources ANSSI indexées dans NotebookLM, puis épurée et reformulée pour
+          en garder l'essentiel.
+        </p>
+        <p>
+          <span class="meta-tag">Outil : NotebookLM</span>
+          <span class="meta-tag">Format : Texte / Markdown</span>
+        </p>
+        <div class="script-box">
+          POINTS CLÉS DU RÉSUMÉ : • L'hygiène numérique repose sur 3 piliers :
+          l'authentification forte, la mise à jour constante et la sauvegarde
+          cloisonnée (Règle 3-2-1). • Le phishing reste la menace la plus active
+          : attention aux expéditeurs modifiés et aux fausses urgences. • Un
+          gestionnaire de mots de passe réduit de 90% les risques de
+          compromission par credential stuffing.
+        </div>
+      </div>
+
+      <!-- 4. PODCAST -->
+      <div class="prod-card">
+        <h4>4. Podcast Audio (NotebookLM)</h4>
+        <p>
+          <strong>Description :</strong> Discussion audio générée par
+          intelligence artificielle simulant un échange interactif entre deux
+          animateurs qui décortiquent les risques liés au manque de
+          cybersécurité chez les jeunes.
+        </p>
+        <p>
+          <span class="meta-tag">Outil : NotebookLM (Audio Overview)</span>
+          <span class="meta-tag">Format : Fichier Audio MP3</span>
+
+        </p>
+        <audio src="/portfolio-numerique/media/cyber.mp3" controls></audio>
+      </div>
+
+      <!-- 5. CARTE MENTALE -->
+      <div class="prod-card">
+        <h4>5. Carte Mentale (NotebookLM & Canva)</h4>
+        <p>
+          <strong>Description :</strong> Schéma heuristique centralisant la
+          structure du cours : au centre la Cybersécurité, et en branches
+          principales : Menaces, Outils de défense, Bonnes pratiques et Cadre
+          institutionnel (ANSSI).
+        </p>
+        <a href="https://notebooklm.link.google/7RynKj3DYwba" target="_blank" rel="noopener noreferrer">voir l'exemple</a>
+        <p>
+          <span class="meta-tag">Outils : NotebookLM + Canva</span>
+          <span class="meta-tag">Format : Image / Schéma interactif</span>
+        </p>
+      </div>
+
+      <!-- 6. POWERPOINT INTERACTIF AVEC VOIX -->
+      <div class="prod-card" style="border-left-color: #0066cc">
+        <h4>6. PowerPoint Interactif avec Menu Cliquable et Voix</h4>
+        <p>
+          <strong>Description :</strong> Diaporama complet structuré avec un
+          menu de navigation interne permettant de sauter d'un module à l'autre.
+          Chaque diapositive intègre un enregistrement vocal explicatif basé sur
+          un script rigoureux.
+        </p>
+        <p>
+          <span class="meta-tag">Outils : PowerPoint / Canva / Gamma</span>
+          <span class="meta-tag">Format : Vidéo de présentation / PPSX</span>
+        </p>
+
+        <strong
+          >Script du PowerPoint interactif (2 à 4 phrases par diapositive)
+          :</strong
+        >
+        <div class="script-box">
+          Diapositive 1 (Sommaire interactif) : "Bienvenue dans cette
+          présentation interactive sur la cybersécurité. Utilisez le menu
+          cliquable ci-dessous pour choisir directement le module que vous
+          souhaitez explorer : Gestion des mots de passe, Détection du Phishing
+          ou Stratégie de sauvegarde." Diapositive 2 (Module Mots de Passe) :
+          "La première barrière de sécurité est votre mot de passe. Il doit
+          comporter au moins douze caractères, inclure des symboles et ne jamais
+          être dupliqué d'un site à un autre. L'utilisation d'un gestionnaire de
+          clés sécurisé est aujourd'hui indispensable." Diapositive 3 (Module
+          Phishing) : "Le phishing cherche à exploiter la confiance de
+          l'utilisateur. Vérifiez toujours attentivement l'URL de destination et
+          ne téléchargez jamais de pièces jointes inattendues. En cas de doute,
+          signalez l'incident immédiatement."
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2026 - Portfolio Numérique | Chapitre 3 : Création de Contenu
+        Multicanal.
+      </p>
+    </footer>
+  </body>
 </html>

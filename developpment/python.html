@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/portfolio-numerique/css/style.css" />
+    <title>Mini-Projets Python</title>
+    <style>
+      h1 {
+        color: white;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f7f6;
+      }
+      header,
+      section,
+      footer {
+        max-width: 900px;
+        margin: 0 auto 25px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .nav-retour {
+        display: inline-block;
+        margin-bottom: 15px;
+        text-decoration: none;
+        color: #0066cc;
+        font-weight: 600;
+      }
+      h1 {
+        color: #1a252f;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: #0066cc;
+        border-bottom: 2px solid #eef2f7;
+        padding-bottom: 8px;
+        margin-top: 0;
+      }
+      h3 {
+        color: #34495e;
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: #ffd43b;
+        text-decoration: none;
+        margin-right: 15px;
+        font-weight: bold;
+      }
+      section {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #2b5b84;
+        border-bottom: 2px solid #ffd43b;
+        padding-bottom: 5px;
+      }
+      pre {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Consolas", monospace;
+      }
+      .screenshot-box {
+        border: 2px dashed #aaa;
+        padding: 20px;
+        text-align: center;
+        background: #fafafa;
+        color: #666;
+        margin: 15px 0;
+        border-radius: 5px;
+      }
+      .tools {
+        font-size: 0.9em;
+        color: #555;
+        background: #eef2f5;
+        padding: 10px;
+        border-left: 4px solid #2b5b84;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="nav-retour">← Retour à l'accueil</a>
+      <h1>Développement Python</h1>
+      <p>
+        <strong>Objectif :</strong>Trois mini-projets interactifs avec
+        explications, captures d'exécution et retours d'expérience.
+      </p>
+    </header>
+    <div class="tools">
+      <strong>Outils utilisés :</strong> VS Code (environnement de
+      développement), Assistant IA (pour déboguer et comprendre certaines
+      exceptions sans générer le code complet).
+    </div>
+
+    <!-- PROJET 1 -->
+    <section>
+      <h2>Projet 1 : Calculatrice Interactive en Console</h2>
+      <p>
+        <strong>Description du problème :</strong> Créer un programme capable
+        d'effectuer les quatre opérations arithmétiques de base (+, -, *, /)
+        entre deux nombres saisis par l'utilisateur, tout en gérant les erreurs
+        courantes comme la division par zéro.
+      </p>
+
+      <p><strong>Code source :</strong></p>
+      <pre><code>def calculatrice():
+    while True:
+        choix = input("\nOpération (+, -, *, /) ou 'q' pour quitter : ")
+        if choix == 'q':
+            break
+        if choix not in ('+', '-', '*', '/'):
+            print("Opération invalide.")
+            continue
+        try:
+            a = float(input("Premier nombre : "))
+            b = float(input("Deuxième nombre : "))
+            if choix == '+': print(f"Résultat : {a + b}")
+            elif choix == '-': print(f"Résultat : {a - b}")
+            elif choix == '*': print(f"Résultat : {a * b}")
+            elif choix == '/':
+                if b == 0:
+                    print("Erreur : Division par zéro impossible.")
+                else:
+                    print(f"Résultat : {a / b}")
+        except ValueError:
+            print("Erreur : Veuillez entrer des nombres valides.")
+
+calculatrice()</code></pre>
+
+      <p>
+        <strong>Explication du fonctionnement :</strong> Le programme tourne
+        dans une boucle infinie <code>while True</code> jusqu'à ce que
+        l'utilisateur saisisse 'q'. Il vérifie la validité de l'opérateur,
+        convertit les entrées en nombres flottants (<code>float</code>) et
+        utilise un bloc <code>try/except</code> pour intercepter les saisies non
+        numériques.
+      </p>
+
+      <div class="screenshot-box">
+        <img
+          src="/portfolio-numerique/media/calcul.jpg"
+          alt="Exécution Calculatrice"
+          style="max-width: 100%"
+        />
+      </div>
+
+      <p>
+        <strong>Difficultés rencontrées et solutions :</strong> Au départ, le
+        programme plantait (<code>ValueError</code>) si l'utilisateur tapait une
+        lettre au lieu d'un chiffre. J'ai résolu ce problème en encapsulant les
+        entrées <code>input()</code> dans un bloc
+        <code>try...except ValueError</code>.
+      </p>
+    </section>
+
+    <!-- PROJET 2 -->
+    <section>
+      <h2>Projet 2 : Jeu de Devinettes (Nombre Mystère)</h2>
+      <p>
+        <strong>Description du problème :</strong> L'ordinateur génère un nombre
+        aléatoire entre 1 et 100. L'utilisateur doit le retrouver en un minimum
+        d'essais grâce aux indices ("Trop grand" ou "Trop petit") fournis après
+        chaque proposition.
+      </p>
+
+      <p><strong>Code source :</strong></p>
+      <pre><code>import random
+
+nombre_secret = random.randint(1, 100)
+essais = 0
+trouve = False
+
+print("Devinez le nombre entre 1 et 100 !")
+
+while not trouve:
+    proposition = int(input("Votre proposition : "))
+    essais += 1
+    if proposition < nombre_secret:
+        print("C'est plus grand !")
+    elif proposition > nombre_secret:
+        print("C'est plus petit !")
+    else:
+        print(f"Bravo ! Trouvé en {essais} essais.")
+        trouve = True</code></pre>
+
+      <p>
+        <strong>Explication du fonctionnement :</strong> La bibliothèque
+        standard <code>random</code> génère l'entier cible. Une boucle
+        <code>while</code> compare à chaque tour la saisie du joueur avec la
+        valeur secrète et incrémente un compteur <code>essais</code> jusqu'à
+        l'égalité.
+      </p>
+
+      <div class="screenshot-box">
+        <img
+          src="/portfolio-numerique/media/jeux.jpg"
+          style="max-width: 100%"
+          alt=""
+          srcset=""
+        />
+      </div>
+
+      <p>
+        <strong>Difficultés rencontrées et solutions :</strong> La fonction
+        <code>input()</code> renvoie une chaîne de caractères
+        (<code>str</code>), ce qui provoquait une <code>TypeError</code> lors de
+        la comparaison avec un entier. La conversion explicite via
+        <code>int()</code> a corrigé l'erreur.
+      </p>
+    </section>
+
+    <!-- PROJET 3 -->
+    <section>
+      <h2>Projet 3 : Gestionnaire de Notes Étudiant</h2>
+      <p>
+        <strong>Description du problème :</strong> Permettre à un étudiant de
+        saisir ses notes, d'afficher la liste complète, de calculer sa moyenne
+        générale et d'identifier la note maximale et minimale.
+      </p>
+
+      <p><strong>Code source :</strong></p>
+      <pre><code>notes = []
+
+while True:
+    saisie = input("Entrez une note sur 20 (ou 'fin' pour calculer) : ")
+    if saisie.lower() == 'fin':
+        break
+    note = float(saisie)
+    if 0 <= note <= 20:
+        notes.append(note)
+    else:
+        print("La note doit être comprise entre 0 et 20.")
+
+if len(notes) > 0:
+    moyenne = sum(notes) / len(notes)
+    print(f"\nNotes saisies : {notes}")
+    print(f"Moyenne : {moyenne:.2f}/20 | Max : {max(notes)} | Min : {min(notes)}")
+else:
+    print("Aucune note enregistrée.")</code></pre>
+
+      <p>
+        <strong>Explication du fonctionnement :</strong> Les notes valides sont
+        ajoutées dynamiquement dans une liste Python via <code>append()</code>.
+        Une fois la saisie terminée, les fonctions natives <code>sum()</code>,
+        <code>len()</code>, <code>max()</code> et <code>min()</code> permettent
+        d'extraire instantanément les statistiques.
+      </p>
+
+      <div class="screenshot-box">
+        <img
+          src="/portfolio-numerique/media/gest.jpg"
+          style="max-width: 100%"
+          alt=""
+          srcset=""
+        />
+      </div>
+
+      <p>
+        <strong>Difficultés rencontrées et solutions :</strong> Si l'utilisateur
+        tapait 'fin' directement sans saisir de note, le calcul
+        <code>sum(notes)/len(notes)</code> provoquait une division par zéro
+        (<code>ZeroDivisionError</code>). L'ajout de la condition
+        <code>if len(notes) > 0:</code> a sécurisé le programme.
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+:root {
+    --bg-color: #f4f7f9;
+    --surface-color: #ffffff;
+    --text-color: #1e293b;
+    --muted-color: #475569;
+    --primary-color: #0f4c81;
+    --accent-color: #0ea5e9;
+    --border-color: #cbd5e1;
+    --code-bg: #0f172a;
+    --code-text: #e2e8f0;
+    --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+body.dark-mode {
+    --bg-color: #0b1120;
+    --surface-color: #1e293b;
+    --text-color: #f1f5f9;
+    --muted-color: #cbd5e1;
+    --primary-color: #38bdf8;
+    --accent-color: #0284c7;
+    --border-color: #334155;
+    --code-bg: #020617;
+    --code-text: #f8fafc;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.site-header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    background-color: rgba(255, 255, 255, 0.18);
+    outline: 2px solid #ffffff;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.92;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+section {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+    box-shadow: var(--shadow);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+p, ul, ol {
+    margin-bottom: 0.9rem;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.media-img {
+    width: 100%;
+    max-width: 780px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+pre {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 0.75rem 0 1rem;
+}
+
+code {
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.quiz-option {
+    display: block;
+    margin: 0.45rem 0;
+    cursor: pointer;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--muted-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+@media (max-width: 720px) {
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 0.75rem;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+}

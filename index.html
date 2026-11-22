@@ -1,16 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio Numérique — Accueil</title>
+    <link rel="stylesheet" href="/portfolio-numerique/css/style.css" />
+    <script src="/portfolio-numerique/js/script.js" defer></script>
   </head>
   <body>
-    <h1>Bienvenue sur mon projet</h1>
-    <p>
-      Ceci est une page HTML minimale réalisée dans le cadre de mon travail
-      pratique.
-    </p>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">Portfolio Numérique</a>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          ☰ Menu
+        </button>
+        <nav id="nav-menu" class="nav-menu" aria-label="Navigation principale">
+          <a href="/portfolio-numerique/index.html">Accueil</a>
+          <a href="/portfolio-numerique/developpment/python.html">Python</a>
+          <a href="/portfolio-numerique/developpment/langage-c.html"
+            >Langage C</a
+          >
+          <a href="/portfolio-numerique/developpment/algorithme.html"
+            >Algorithmique</a
+          >
+          <a href="/portfolio-numerique/systemes/systemes-exploitation.html"
+            >Systèmes d'exploitation</a
+          >
+          <a href="/portfolio-numerique/systemes/architecture-eléctronique.html"
+            >Architecture &amp; Électronique</a
+          >
+          <a href="/portfolio-numerique/digital-skills/creation-contenu.html"
+            >cration de contenu</a
+          >
+          <a href="/portfolio-numerique/digital-skills/cybersécurité.html"
+            >cyber</a
+          >
+          <a href="/portfolio-numerique/digital-skills/prompt-engineering.html"
+            >prompt engineering</a
+          >
+        </nav>
+        <div class="controls">
+          <button id="theme-toggle" class="btn" type="button">
+            Mode sombre
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h1>Présentation du Portfolio Numérique</h1>
+        <p>
+          <strong>Prénom :</strong> mgherbie youssef &mdash;
+          <strong>Filière :</strong> TI 13
+        </p>
+        <p>
+          Ce portfolio regroupe mes travaux pratiques et synthèses de cours
+          autour du développement (Python, C), de l'algorithmique, des systèmes
+          d'exploitation, de l'architecture matérielle et des bonnes pratiques
+          numériques.
+        </p>
+      </section>
+
+      <section>
+        <h2>Modules du portfolio</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <div>
+              <h3>Développement Python</h3>
+              <p>
+                Trois mini-projets interactifs avec explications, captures
+                d'exécution et retours d'expérience.
+              </p>
+            </div>
+            <a href="/portfolio-numerique/developpment/python.html"
+              >Ouvrir le module Python &rarr;</a
+            >
+          </article>
+          <article class="card">
+            <div>
+              <h3>Langage C</h3>
+              <p>
+                Trois programmes illustrant variables, boucles, tableaux,
+                fonctions et pointeurs, plus un comparatif Python / C.
+              </p>
+            </div>
+            <a href="/portfolio-numerique/developpment/langage-c.html"
+              >Ouvrir le module Langage C &rarr;</a
+            >
+          </article>
+          <article class="card">
+            <div>
+              <h3>Algorithmique</h3>
+              <p>
+                Recherche du maximum, recherche linéaire et tri à bulles avec
+                pseudo-code, exemples et visualisation JS.
+              </p>
+            </div>
+            <a href="/portfolio-numerique/developpment/algorithme.html"
+              >Ouvrir le module Algorithmique &rarr;</a
+            >
+          </article>
+          <article class="card">
+            <div>
+              <h3>Systèmes d'exploitation</h3>
+              <p>
+                Rôle de l'OS, comparatif Windows / Linux / macOS et commandes
+                essentielles en terminal.
+              </p>
+            </div>
+            <a href="/portfolio-numerique/systemes/systemes-exploitation.html"
+              >Ouvrir le module OS &rarr;</a
+            >
+          </article>
+          <article class="card">
+            <div>
+              <h3>Architecture &amp; Électronique</h3>
+              <p>
+                Architecture d'un ordinateur, bases binaire et hexadécimale,
+                portes logiques et tables de vérité.
+              </p>
+            </div>
+            <a
+              href="/portfolio-numerique/systemes/architecture-eléctronique.html"
+              >Ouvrir le module Architecture &rarr;</a
+            >
+          </article>
+          <article class="card">
+            <h3>cyber sécurité</h3>
+            <p>
+              Comprendre les menaces et adopter les réflexes essentiels
+               pour sécuriser son environnement numérique.
+            </p>
+            <a href="/portfolio-numerique/digital-skills/cybersécurité.html"
+              >ouvrir le module cyber</a
+            >
+          </article>
+          <article class="card">
+            <h3>creation de contenu</h3>
+            <p>roduire des contenus numériques variés,
+              interactifs et de haute qualité à partir d'un sujet unique en exploitant
+              des outils spécialisés (IA, montage, présentation).</p>
+            <a href="/portfolio-numerique/digital-skills/creation-contenu.html"
+              >ouvrir le module cyber</a
+            >
+          </article>
+          <article class="card">
+            <h3>prompt-engineering</h3>
+            <p>
+              Apprendre à structurer et formuler des requêtes précises pour exploiter 
+              pleinement le potentiel des grands modèles de langage (LLM) dans un cadre
+               académique et technique.</p>
+
+            </p>
+            <a
+              href="/portfolio-numerique/digital-skills/prompt-engineering.html"
+              >ouvrir le module cyber</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Mini-Quiz Cybersécurité</h2>
+        <form id="cyber-quiz">
+          <fieldset style="border: none; margin-bottom: 1rem">
+            <legend>
+              <strong
+                >1. Quelle pratique renforce le plus la protection d'un compte
+                en cas de fuite de mot de passe ?</strong
+              >
+            </legend>
+            <label class="quiz-option"
+              ><input type="radio" name="q1" value="a" /> Réutiliser le même mot
+              de passe sur tous les sites</label
+            >
+            <label class="quiz-option"
+              ><input type="radio" name="q1" value="b" /> Activer la double
+              authentification (2FA / MFA)</label
+            >
+            <label class="quiz-option"
+              ><input type="radio" name="q1" value="c" /> Désactiver les mises à
+              jour automatiques</label
+            >
+          </fieldset>
+
+          <fieldset style="border: none; margin-bottom: 1rem">
+            <legend>
+              <strong>2. Qu'est-ce que le phishing (hameçonnage) ?</strong>
+            </legend>
+            <label class="quiz-option"
+              ><input type="radio" name="q2" value="a" /> Une usurpation
+              d'identité pour tromper l'utilisateur et voler des
+              informations</label
+            >
+            <label class="quiz-option"
+              ><input type="radio" name="q2" value="b" /> Un outil de
+              compression de fichiers ZIP</label
+            >
+            <label class="quiz-option"
+              ><input type="radio" name="q2" value="c" /> Un câble réseau haute
+              vitesse</label
+            >
+          </fieldset>
+
+          <button class="btn" type="submit">Valider mes réponses</button>
+          <p
+            id="quiz-result"
+            role="status"
+            style="margin-top: 0.75rem; font-weight: 600"
+          ></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Portfolio Numérique &copy; 2026 &mdash; Site statique HTML / CSS /
+        JavaScript
+      </p>
+    </footer>
   </body>
 </html>

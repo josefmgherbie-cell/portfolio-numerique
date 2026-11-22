@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.2 Architecture des ordinateurs et électronique</title>
+    <link rel="stylesheet" href="/portfolio-numerique/css/style.css" />
+    <script src="/portfolio-numerique/js/script.js" defer></script>
+    <style>
+            header, section, footer {
+        max-width: 900px;
+        margin: 0 auto 25px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .nav-retour {
+        display: inline-block;
+        margin-bottom: 15px;
+        text-decoration: none;
+        color: #0066cc;
+        font-weight: 600;
+    }
+    h1 { color: #1a252f; margin-bottom: 10px; }
+    h2 { color: #0066cc; border-bottom: 2px solid #eef2f7; padding-bottom: 8px; margin-top: 0; }
+    h3 { color: #34495e; margin-top: 20px; }
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <a href="../index.html" class="nav-retour">← Retour à l'accueil</a>
+        <h1>Architecture &amp; Électronique</h1>
+        <p>
+          <strong>Objectif :</strong>  Architecture d'un ordinateur, bases binaire et hexadécimale,portes logiques et tables de vérité.
+        </p>
+          
+        </nav>
+
+    </header>
+
+    <main class="container">
+      <section>
+        <h1>6.2 Architecture des ordinateurs et électronique</h1>
+        <h2>Architecture d'un ordinateur</h2>
+        <img
+          src="/portfolio-numerique/media/architecteure.jpg"
+          alt="Schéma commenté de l'architecture d'un ordinateur : processeur, mémoire, entrées/sorties et bus"
+          class="media-img"
+        />
+        <ul>
+          <li>
+            <strong>Processeur (CPU) :</strong> exécute les instructions (unité
+            de contrôle + unité arithmétique et logique).
+          </li>
+          <li>
+            <strong>Mémoire (RAM) :</strong> stocke temporairement instructions
+            et données en cours d'utilisation.
+          </li>
+          <li>
+            <strong>Entrées / Sorties :</strong> assurent les échanges avec
+            l'utilisateur et les périphériques.
+          </li>
+          <li>
+            <strong>Bus :</strong> transporte les informations entre composants
+            (bus de données, d'adresses et de contrôle).
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Systèmes de numération : Binaire et Hexadécimal</h2>
+        <p>
+          Le <strong>binaire</strong> (base 2) utilise les chiffres
+          <code>0</code> et <code>1</code>. L'<strong>hexadécimal</strong> (base
+          16) utilise <code>0-9</code> et <code>A-F</code> (où A = 10 à F = 15),
+          pratique pour lire des adresses mémoire ou des codes couleurs de façon
+          compacte.
+        </p>
+        <ul>
+          <li>
+            <code>1101</code> (binaire) = $1 \times 2^3 + 1 \times 2^2 + 0
+            \times 2^1 + 1 \times 2^0 = 13$ (décimal) =
+            <code>0xD</code> (hexadécimal).
+          </li>
+          <li>
+            <code>255</code> (décimal) = <code>11111111</code> (binaire) =
+            <code>0xFF</code> (hexadécimal).
+          </li>
+          <li>
+            <code>1A</code> (hexadécimal) = $1 \times 16 + 10 = 26$ (décimal) =
+            <code>00011010</code> (binaire).
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Électronique numérique : Portes logiques et table de vérité</h2>
+        <img
+          src="captures/portes-logiques.png"
+          alt="Schéma de portes logiques ET et OU avec entrées A et B et sorties S1 et S2"
+          class="media-img"
+        />
+        <p>
+          Une porte <strong>ET (AND)</strong> vaut <code>1</code> uniquement si
+          <code>A = 1</code> et <code>B = 1</code>. Une porte
+          <strong>OU (OR)</strong> vaut <code>1</code> dès qu'au moins une
+          entrée vaut <code>1</code>.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Entrée A</th>
+              <th>Entrée B</th>
+              <th>Sortie S1 (A ET B)</th>
+              <th>Sortie S2 (A OU B)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Portfolio Numérique &mdash; Module 6.2 Architecture des ordinateurs et
+        électronique
+      </p>
+    </footer>
+  </body>
+</html>
